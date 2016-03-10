@@ -1,6 +1,10 @@
 /**
  * Copyright (C) 2016 William Ziener-Dignazio
- * Approximage Boyer-Moore Search Utility
+ * Approximate Boyer-Moore Search Utility
+ * Rochester Institute of Technology
+ *
+ * Algorithm developed in "Approximate Boyer-Moore String Matching"
+ * by Jorma Tarhio and Esko Ukkonen
  */
 import java.util.HashMap;
 import java.util.Map;
