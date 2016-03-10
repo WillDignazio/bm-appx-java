@@ -10,18 +10,20 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BMAppx {
-    static class Tuple<T1, T2> {
+    static class Tuple<T1, T2, T3> {
 	T1 left;
-	T2 right;
+	T2 middle;
+	T3 right;
 	
-	public Tuple(T1 _left, T2 _right) {
+	public Tuple(T1 _left, T2 _middle, T3 _right) {
 	    this.left = _left;
+	    this.middle = _middle;
 	    this.right = _right;
 	}
 
 	@Override
 	public String toString() {
-	    return "(" + left + "," + right + ")";
+	    return "(" + left + "," + middle + "," + right + ")";
 	}
     }
     
@@ -73,7 +75,7 @@ public class BMAppx {
 	return alphabet;
     }
     
-    public static List<Tuple<Integer, String>> appx_search(String text, String pattern, int k) {
+    public static List<Tuple<Integer, String, Integer>> appx_search(String text, String pattern, int k) {
 	if (k > pattern.length()) {
 	    System.err.println("ERROR: K > pattern.length");
 	    return new ArrayList<>();
@@ -122,7 +124,7 @@ public class BMAppx {
 	}
 
 	/* Added for list of results */
-	List<Tuple<Integer, String>> results = new ArrayList<>();
+	List<Tuple<Integer, String, Integer>> results = new ArrayList<>();
 
 	System.out.println();
 	System.out.println("## Searching...");
@@ -149,7 +151,7 @@ public class BMAppx {
 
 	    if (neq <= k) {
 		 // Added - m for relative to text
-		results.add(new Tuple<Integer, String>(j - m, text.substring(j-m, j)));
+		results.add(new Tuple<Integer, String, Integer>(j - m, text.substring(j-m, j), neq));
 	    }
 	    j = j + (d == 0 ? 1 : d);
 	}
