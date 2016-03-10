@@ -1,3 +1,7 @@
+/**
+ * Copyright (C) 2016 William Ziener-Dignazio
+ * Approximage Boyer-Moore Search Utility
+ */
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
